@@ -10,6 +10,7 @@
     justify-content: space-around;
     padding: 20px; 
     margin-top: 40px; 
+    align-items: center;
   }
   
   /* Style for each product container */

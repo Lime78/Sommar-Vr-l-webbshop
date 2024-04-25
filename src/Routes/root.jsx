@@ -1,11 +1,11 @@
 import { Link, NavLink, Outlet } from "react-router-dom"
 import React, { useEffect } from 'react';
 import './router.jsx'
-// import Footer from '../components/footer.jsx'
+import './root.css'
 
 function Root() {
     return (
-        <div className="App">
+        <div className="header-options">
             <header>
         <div className="header-row"> </div>
             {/* aria-hidden means that the element is not visible to the screenreading-..uh.. thing */}
@@ -18,5 +18,6 @@ function Root() {
         </div>
     );
 }
+
 
 export default Root; 

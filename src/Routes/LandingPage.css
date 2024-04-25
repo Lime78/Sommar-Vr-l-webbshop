@@ -1,0 +1,59 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.App {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px; 
+    margin-top: 40px; 
+  }
+  
+  /* Style for each product container */
+  .App > div {
+    width: 200px; 
+    margin: 10px; 
+    text-align: center; 
+  }
+  
+  .produkt-bild {
+    width: 100%;
+    height: auto; 
+  }
+  
+  .produkt-namn {
+    margin-top: 10px;
+  }
+  
+  .pris {
+    font-weight: bold; 
+  }
+  
+
+  .Vår-skrik,
+.Kassa,
+.Log-in {
+  text-decoration: none;
+  padding: 10px;
+  color: #333;
+  font-family: 'Shrikhand', cursive;
+  font-size: 30px;
+  
+}
+
+/* Hover effect */
+.Vår-skrik:hover,
+.Kassa:hover,
+.Log-in:hover {
+  color: #555; /* Change color on hover */
+}
+
+/* Active link */
+.Vår-skrik.active,
+.Kassa.active,
+.Log-in.active {
+  font-weight: bold; /* Make active link bold */
+}

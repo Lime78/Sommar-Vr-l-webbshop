@@ -8,7 +8,7 @@ function Root() {
         <div className="header-options">
             <header>
         <div className="header-row"> </div>
-            {/* aria-hidden means that the element is not visible to the screenreading-..uh.. thing */}
+
             <section className="mainContent" aria-hidden></section>
             <NavLink to="/AdminPage" className="Log-in">Admin</NavLink>
             <NavLink to="/" className="Vår-skrik"> Vår Skrik </NavLink>

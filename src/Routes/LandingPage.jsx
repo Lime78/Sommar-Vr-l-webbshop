@@ -1,28 +1,28 @@
-import LandingPageCard from "../components/LandingPageCard";
 import "./LandingPage.css";
 import { db } from '../data/firebase'
-import { getDocs, collection } from 'firebase/firestore'
+import { getDocs, collection, addDoc } from 'firebase/firestore'
 import { useEffect, useState } from 'react'
 import { get, set } from "firebase/database";
+import "./AdminPage.jsx";
+import { useStore } from "../data/store";
 
 
 function LandingPage() {
+  const { addToCart } = useStore();
   const [storeList, setStoreList] = useState([]);
+
 
   const storeListCollectionRef = collection(db, 'storeList');
 
   useEffect(() => {
   const getStoreList = async () => {
-    try {
+  
       const data = await getDocs(storeListCollectionRef);
       const filteredData = data.docs.map((doc) => ({   
         ...doc.data(),
         id: doc.id
       }));
       setStoreList(filteredData);
-    } catch (error) {
-      console.error("Error fetching store list:", error);
-    }
   };
 
   getStoreList();
@@ -30,17 +30,17 @@ function LandingPage() {
   }, []);
 
   return (
-    <div className="App">
-        <div>
+      
+        <div className="wrap-produkt">
             {storeList.map((storeList) => (
-                <div key={storeList.id}>
+                <div className="produkt-kort" key={storeList.id}>
                 <img className="produkt-bild"src={storeList.image} alt={storeList.name} />
                 <p className="produkt-namn">{storeList.name}</p>
                 <p className="pris">{storeList.price}kr</p>
+                <button className="köp-knapp" onClick={() => addToCart(storeList)}>Köp</button>
               </div>
             ))}
         </div>
-    </div>
   );
 }
 

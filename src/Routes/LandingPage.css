@@ -1,41 +1,54 @@
-body{
-  background: linear-gradient(100deg, rgba(18, 28, 206, 0.848) 0%, rgba(70, 2, 159, 0.643) );
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-.App {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 20px; 
-    margin-top: 40px; 
-    align-items: center;
-  }
+body{
+  background: #576CA8;
+}
   
   /* Style for each product container */
-  .App > div {
-    width: 200px; 
-    margin: 10px; 
+  .wrap-produkt {
+    padding: 10px; 
     text-align: center; 
     border: 2px solid #180041;
     padding: 25px;
-    background-color: #180041;
+    background-color: #19535F;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 20px;
   }
   
   .produkt-bild {
-    width: 100%;
+    width: 200px;
     height: auto; 
+    padding: 1em;
   }
   
   .produkt-namn {
     margin-top: 10px;
     font-family: 'Alegreya Sans SC', sans-serif;
     font-weight: bold;
-    color: white;
+    color: #19535F;
   }
-  
+
+
   .pris {
     font-weight: bold; 
-    color: white;
+    color: #19535F;
+  }
+
+  .produkt-kort{
+    display: flex;
+    flex-direction: column;
+    height: 310px;
+    background-color: #F0F3F5;
+    margin: 0 auto;
+    border-radius: 10px;
+    /* border: 2px solid #000000; */
+    justify-content: space-between;
   }
   
 
@@ -47,14 +60,13 @@ body{
   color: #fbfbfb;
   font-family: 'Alegreya Sans SC', sans-serif;
   font-size: 30px;
-  
 }
 
 
 .Vår-skrik:hover,
 .Kassa:hover,
 .Log-in:hover {
-  color: #e70606; 
+  color: #34097F; 
 }
 
 
@@ -63,3 +75,12 @@ body{
 .Log-in.active {
   font-weight: bold;
 }
+
+  /* .köp-knapp {
+    border: none;
+    border-radius: 50px;
+    background-color: #8AFFC1;
+    margin-bottom: 1em;
+    margin: 0.2em;
+  }
+   */

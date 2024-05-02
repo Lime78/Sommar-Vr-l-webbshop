@@ -1,0 +1,65 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+  }
+
+  .wrap-produkt {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+  }
+  .produkt-bild {
+    width: 64px;
+    height: 64px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+    float: left;
+  }
+  .produkt-namn {
+    font-weight: bold;
+    margin-bottom: 0.4em;
+  }
+  .pris {
+    text-align: right;
+    font-size: 18px;
+    color: #555;
+  }
+  .köp-knapp {
+    margin-bottom: 5px;
+    font-size: 14px;
+    border: 2px solid #FFAA3F;
+    background-color: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  .köp-knapp:hover {
+    background-color: #FFDDB2;
+  }
+  .köp-knapp:active {
+    background-color: #ED8400;
+    color: #fff;
+    outline: none;
+  }
+  .Item-addToCart:focus {
+    outline: none;
+  }
+  .Item-left {
+    flex: 1;
+  }
+  .Item-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .ItemPage-items {
+    margin: 0;
+    padding: 0;
+  }
+  .ItemPage-items li {
+    list-style: none;
+    margin-bottom: 20px;
+  }
+  

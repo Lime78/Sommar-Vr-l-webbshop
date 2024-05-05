@@ -1,3 +1,11 @@
+.cart-flex{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    align-items: center;
+    margin-top: 8em;
+}
+
 .cart-bild{
     width: 200px;
     height: auto; 
@@ -66,11 +74,52 @@
     border-radius: 6px;
 }
 
-.confirm-info textarea {
+.cart-info textarea {
     height: 50px;
     width: 400px;
     background: transparent;
     border: none;
     outline: none;
     font-size: 20px;
+}
+
+.close {
+    position: relative;
+    top: -4em;
+    right: -10em;
+    cursor: pointer;
+    font-size: 20px;
+    color: #222222;
+}
+
+
+.total-amount {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1em;
+    font-size: 20px;
+}
+
+.beställ-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 9em;
+}
+
+.cart-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.input-container input,
+.input-container textarea {
+    margin-right: 1em; /* Justera mellanrummet mellan fält och felmeddelande efter behov */
 }

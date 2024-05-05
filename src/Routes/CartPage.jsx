@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { useStore } from '../data/store';
 import './CartPage.css';
+import { Link } from 'react-router-dom';
 
 const CartPage = () => {
-    const { cart, addToCart, removeFromCart } = useStore();
+    const { cart, addToCart, removeFromCart, storeList} = useStore();
     
     const handleAdd = (product) => {
         addToCart(product);
@@ -32,38 +33,53 @@ const CartPage = () => {
     const [showPopup, setShowPopup] = useState(false); // State för att visa popup
 
     const handleClick = () => {
-        setShowPopup(true);
-        console.log('Tack för din beställning');
+        if (emailIsValid && telefonIsValid) {
+            setShowPopup(true);
+            console.log('Tack för din beställning');
+        }
     };
 
+    const emailIsValid = email.length > 0 && email.includes('@') ;
+    const telefonIsValid = telefon.length > 0 && /^\d+$/.test(telefon);
+
+    const emailErrorMessage = !emailIsValid ? 'Vänligen, fyll i din e-postadress' : '';
+    const telefonErrorMessage = !telefonIsValid ? 'Vänligen, fyll i din telefonnummer' : '';
     return (
         <div>
-            <h1>Cart Page</h1>
             {/* E-post, telefonnummer och meddelande fält */}
             <div className="cart-info-frame">
                 <div className="cart-info">
-                <input 
-                    type="email" 
-                    placeholder="E-post"
-                    value={email}
-                    onChange={handleEmailChange}
-                />
-                <input 
-                    type="text" 
-                    placeholder="Telefonnummer" 
-                    value={telefon}
-                    onChange={handleTelefonChange}
-                />
-                <div className="cart-textarea">
-                <textarea 
-                    placeholder="Ev; meddelande" 
-                    rows="4" 
-                    value={meddelande}
-                    onChange={handleMeddelandeChange}
-                ></textarea>
+                    <div className="input-container">
+                        <input 
+                            type="email" 
+                            placeholder="E-post"
+                            value={email}
+                            onChange={handleEmailChange}
+                        />
+                        {emailErrorMessage && <p className="error-message">{emailErrorMessage}</p>}
+                    </div>
+                    <div className="input-container">
+                        <div className="cart-info">
+                        <input 
+                            type="text" 
+                            placeholder="Telefonnummer" 
+                            value={telefon}
+                            onChange={handleTelefonChange}
+                        />
+                        {telefonErrorMessage && <p className="error-message">{telefonErrorMessage}</p>}
+                    </div>
+                    </div>
+                    <div className="cart-textarea">
+                        <textarea 
+                            placeholder="Ev; meddelande" 
+                            rows="4" 
+                            value={meddelande}
+                            onChange={handleMeddelandeChange}
+                        ></textarea>
+                    </div>
                 </div>
             </div>
-            </div>
+            
             <ul>
                 <div className="cart-flex">
                     {cart.map((product, index) => (
@@ -78,19 +94,26 @@ const CartPage = () => {
                             </div>
                         </li>
                     ))}
+                    <div className='total-amount'>
+                        <div className='total-amount-wraper'>
+                            <p className="total-amount">Totalt: {cart.reduce((total, item) => total + item.price, 0)} kr</p>
+                        </div>
+                    </div>
                 </div>
             </ul>
             <button className="beställ-container" onClick={handleClick}>Beställ</button>
-                         {showPopup && 
-
-                            <div className="popup-overlay">
-                                <div className="popup-content">
-                                    <p className="order-message">Tack för din beställning</p> 
-                                </div>
-                            </div>}
+            {showPopup && 
+                <div className="popup-overlay">
+                    <div className="popup-content">
+                        <p className="order-message">Tack för din beställning</p> 
+                        <Link to="/" className="order-link">
+                            <span className="close" onClick={() => setShowPopup(false)}>&times;</span>
+                        </Link>
+                    </div>
+                </div>
+            }
         </div>
     );
 }
 
 export default CartPage;
-

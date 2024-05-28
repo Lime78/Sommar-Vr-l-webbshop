@@ -1,64 +1,123 @@
-*{
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   font-family: sans-serif;
 }
 
-body{
+body {
   background: #576CA8;
 }
-  
-  /* Style for each product container */
-  .wrap-produkt {
-    padding: 10px; 
-    text-align: center; 
-    border: 2px solid #180041;
-    padding: 25px;
-    background-color: #f8fafa;
-    display:flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    gap: 20px;
-  }
-  
-  .produkt-bild {
-    width: 200px;
-    height: auto; 
-    padding: 1em;
-  }
-  
-  .produkt-namn {
-    margin-top: 10px;
-    font-weight: bold;
-    /* color: #19535F; */
-  }
 
+/* Style for each product container */
+.wrap-produkt {
+  padding: 10px;
+  text-align: center;
+  background-color: #f8fafa;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center align the product cards */
+  gap: 20px;
+  margin-top: 50px; /* Add margin at the top */
+}
 
-  .pris {
-    font-weight: bold; 
-    /* color: #19535F; */
-  }
+.produkt-kort {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #F0F3F5;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 250px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  justify-content: space-between; /* Ensures space between elements */
+  position: relative; /* To position the button at the bottom */
+}
 
-  .produkt-kort{
-    display: flex;
-    flex-direction: column;
-    height: 310px;
-    background-color: #F0F3F5;
-    margin: 0 auto;
-    border-radius: 10px;
-    /* border: 2px solid #000000; */
-    justify-content: space-between;
-  }
-  
-  .köp-knapp {
-    margin-bottom: 5px;
-  font-size: 14px;
-  border: 2px solid #FFAA3F;
-  background-color: #fff;
-  border-radius: 3px;
+.produkt-kort:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.produkt-bild {
+  width: 200px;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.produkt-namn {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+  text-align: center;
+}
+
+.pris {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.köp-knapp,
+.edit-knapp,
+.update-knapp {
+  font-size: 16px;
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 5px;
+  padding: 10px 20px;
   cursor: pointer;
-  }
+  transition: background-color 0.2s;
+  align-self: center; /* Center the button horizontally */
+  margin-top: auto; /* Pushes the button to the bottom */
+}
+
+.köp-knapp:hover,
+.edit-knapp:hover,
+.update-knapp:hover {
+  background-color: #45a049;
+}
+
+.edit-knapp {
+  background-color: #FFA500;
+}
+
+.edit-knapp:hover {
+  background-color: #FF8C00;
+}
+
+.update-knapp {
+  background-color: #4CAF50;
+}
+
+.update-knapp:hover {
+  background-color: #45a049;
+}
+
+.edit-input {
+  font-size: 16px;
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 80%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+
+.delete-knapp {
+  background-color: #FF5733;
+}
+
+.delete-knapp:hover {
+  background-color: #FF4500;
+}
+
+
 
 .Vår-skrik,
 .Kassa,
@@ -70,18 +129,14 @@ body{
   border-bottom: 4px solid transparent;
 }
 
-
 .Vår-skrik:hover,
 .Kassa:hover,
 .Log-in:hover {
-  color: #999; 
+  color: #999;
 }
-
 
 .Vår-skrik.active,
 .Kassa.active,
 .Log-in.active {
   font-weight: bold;
 }
-
-

@@ -124,3 +124,28 @@
     font-size: 24px;
     color: red;
 }
+
+.cart-flex li button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    font-size: 18px;
+    margin: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.cart-flex li button:hover {
+    background-color: #45a049;
+}
+
+.cart-flex li button:active {
+    transform: translateY(1px);
+}
+
+.cart-flex li button:focus {
+    outline: none;
+}

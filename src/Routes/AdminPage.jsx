@@ -26,7 +26,7 @@ const AdminPage = () => {
             return;
         }
 
-        // Clear error if validation passes
+        
         setError("");
 
         const storeListCollectionRef = collection(db, 'storeList');
@@ -37,7 +37,7 @@ const AdminPage = () => {
         });
         getStoreList(); 
 
-        // Clear input fields after submission
+
         setNewName("");
         setNewPrice(0);
         setNewImage("");

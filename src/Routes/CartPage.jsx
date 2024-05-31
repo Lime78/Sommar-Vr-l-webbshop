@@ -96,7 +96,7 @@ const CartPage = () => {
                     ))}
                     <div className='total-amount'>
                         <div className='total-amount-wraper'>
-                            <p className="total-amount">Totalt: {cart.reduce((total, item) => total + item.price, 0)} kr</p>
+                        <p className="total-amount">Totalt: {cart.reduce((total, item) => total + Number(item.price), 0)} kr</p>
                         </div>
                     </div>
                 </div>
